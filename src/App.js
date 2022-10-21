@@ -1,15 +1,15 @@
 import logo from './logo.svg';
 import './App.css';
-import { Navbar } from "./components/Navbar";
+import Navbar from "./components/Navbar";
+import NavbarBootstrap from './components/Navbar';
 
-function App() {
+
+
+export default function App() {
   return (
     <div className="App">
-      <header className="App-header">
-        <Navbar/>
-      </header>
+      <NavbarBootstrap/>
     </div>
   );
 }
 
-export default App;
