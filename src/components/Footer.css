@@ -1,0 +1,14 @@
+footer {
+    padding: 10px
+    ;
+    margin-top: 50px;
+    color: white;
+    background-color: black;
+    display: flex;
+    flex-direction: column;
+}
+
+.titular {
+    display: flex;
+    flex-direction: column;
+}

@@ -24,6 +24,7 @@ export default function NavbarBootstrap () {
               </NavDropdown.Item>
               <NavDropdown.Item href="#action/3.3">Especias</NavDropdown.Item>
               <NavDropdown.Divider />
+              
               <NavDropdown.Item href="#action/3.4">
                 Todos los productos
               </NavDropdown.Item>
