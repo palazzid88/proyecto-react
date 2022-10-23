@@ -9,10 +9,12 @@ import Footer from "./components/Footer";
 
 
 export default function App() {
+
+  const mensaje = "Esto es un mensaje para mostrar en pantalla"
   return (
     <div className="App">
       <NavbarBootstrap/>
-      <ItemListContainer greeting='Esto es un mensaje para mostrar en pantalla' />
+      <ItemListContainer greeting={mensaje} />
       <BodyApp/>
       <Footer/>
     </div>

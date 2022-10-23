@@ -18,14 +18,18 @@ export default function NavbarBootstrap () {
           <Nav className="me-auto">
             <Nav.Link href="#home">Inicio</Nav.Link>
             <NavDropdown title="Tienda" id="basic-nav-dropdown">
-              <NavDropdown.Item href="#action/3.1">Frutas</NavDropdown.Item>
-              <NavDropdown.Item href="#action/3.2">
+              <NavDropdown.Item href="http://www.google.com.ar">
+                Frutas
+              </NavDropdown.Item>
+              <NavDropdown.Item href="https://www.youtube.com/">
                 Verduras
               </NavDropdown.Item>
-              <NavDropdown.Item href="#action/3.3">Especias</NavDropdown.Item>
+              <NavDropdown.Item href="https://www.mercadolibre.com.ar/">
+                Especias
+              </NavDropdown.Item>
               <NavDropdown.Divider />
               
-              <NavDropdown.Item href="#action/3.4">
+              <NavDropdown.Item href="https://www.google.com/maps/">
                 Todos los productos
               </NavDropdown.Item>
             </NavDropdown>
