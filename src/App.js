@@ -6,6 +6,7 @@ import ItemListContainer from './components/ItemListContainer';
 import BodyApp from "./components/BodyApp";
 import Footer from "./components/Footer";
 import { ComponentTitle } from './components/ComponentTitle';
+import ItemList from './components/ItemList';
 
 export default function App() {
 
@@ -16,6 +17,7 @@ export default function App() {
         <ComponentTitle />
       </NavbarBootstrap>
       <ItemListContainer greeting={mensaje} />
+      <ItemList/>
       <BodyApp/>
       <Footer/>
     </div>
