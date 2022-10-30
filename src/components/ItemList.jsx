@@ -14,7 +14,7 @@ import frutilla from "../components/img/frutilla.jpg";
 // import oregano from "../components/img/oregano.jpg";
 // import pimientab from "../components/img/pimientab.jpg";
 // import pimientoRojo from "../components/img/pimientoRojo.jpg";
-
+// import stock from "../stock.json";
 
 
 //creo un array de objetos simulando los productos

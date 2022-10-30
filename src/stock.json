@@ -1,137 +1,137 @@
 [
     {
        "id":1,
-       "nombre":"banana",
-       "tipo":"fruta",
-       "descripcion":"Banana de ecuador",
-       "precio":180,
-       "unidad":"kg",
-       "img":"./img/banana.jpg"
+       "title":"banana",
+       "type": "fruta",
+       "description":"Banana de ecuador",
+       "price":180,
+       "un":"kg",
+       "PictureURL":"./banana.jpg"
     },
     {
        "id":2,
-       "nombre":"manzana",
-       "tipo":"fruta",
+       "title":"manzana",
+       "type":"fruta",
        "descripcion":"Manzana roja",
-       "precio":190,
-       "unidad":"kg",
-       "img":"./img/manzana.jpg"
+       "price":190,
+       "un":"kg",
+       "PictureURL":"./img/manzana.jpg"
     },
     {
        "id":3,
-       "nombre":"frutilla",
-       "tipo":"fruta",
+       "title":"frutilla",
+       "type":"fruta",
        "descripcion":"Frutilla sabrosas",
-       "precio":380,
-       "unidad":"kg",
-       "img":"./img/frutilla.jpg"
+       "price":380,
+       "un":"kg",
+       "PictureURL":"./img/frutilla.jpg"
     },
     {
        "id":4,
-       "nombre":"naranja",
-       "tipo":"fruta",
+       "title":"naranja",
+       "type":"fruta",
        "descripcion":"naranja de ombligo",
-       "precio":200,
-       "unidad":"kg",
-       "img":"./img/naranja.jpg"
+       "price":200,
+       "un":"kg",
+       "PictureURL":"./img/naranja.jpg"
     },
     {
        "id":5,
-       "nombre":"kiwi",
-       "tipo":"fruta",
+       "title":"kiwi",
+       "type":"fruta",
        "descripcion":"Kiwi de Nueva Zelanda",
-       "precio":340,
-       "unidad":"kg",
-       "img":"./img/kiwi.jpg"
+       "price":340,
+       "un":"kg",
+       "PictureURL":"./img/kiwi.jpg"
     },
     {
        "id":6,
-       "nombre":"pera",
-       "tipo":"fruta",
+       "title":"pera",
+       "type":"fruta",
        "descripcion":"Pera de Chubut",
-       "precio":150,
-       "unidad":"kg",
-       "img":"./img/pera.jpg"
+       "price":150,
+       "un":"kg",
+       "PictureURL":"./img/pera.jpg"
     },
     {
        "id":7,
-       "nombre":"berenjena",
-       "tipo":"verdura",
+       "title":"berenjena",
+       "type":"verdura",
        "descripcion":"berenjena grande",
-       "precio":250,
-       "unidad":"kg",
-       "img":"./img/berenjena.png"
+       "price":250,
+       "un":"kg",
+       "p":"./img/berenjena.png"
     },
     {
        "id":8,
-       "nombre":"zanahoria",
-       "tipo":"verdura",
+       "title":"zanahoria",
+       "type":"verdura",
        "descripcion":"zanahoria",
-       "precio":250,
-       "unidad":"kg",
-       "img":"./img/zanahoria.jpg"
+       "price":250,
+       "un":"kg",
+       "PictureURL":"./img/zanahoria.jpg"
     },
     {
        "id":9,
-       "nombre":"cebolla",
-       "tipo":"verdura",
+       "title":"cebolla",
+       "type":"verdura",
        "descripcion":"cebolla",
-       "precio":260,
-       "unidad":"kg",
-       "img":"./img/cebolla.jpg"
+       "price":260,
+       "un":"kg",
+       "PictureURL":"./img/cebolla.jpg"
     },
     {
        "id":10,
-       "nombre":"manzana verde",
-       "tipo":"fruta",
+       "title":"manzana verde",
+       "type":"fruta",
        "descripcion":"Manzana Verde",
-       "precio":320,
-       "unidad":"kg",
-       "img":"./img/manzanaVerde.jpg"
+       "price":320,
+       "un":"kg",
+       "PictureURL":"./img/manzanaVerde.jpg"
     },
     {
        "id":11,
-       "nombre":"pimiento Rojo",
-       "tipo":"verdura",
+       "title":"pimiento Rojo",
+       "type":"verdura",
        "descripcion":"Pimiento Rojo",
-       "precio":340,
-       "unidad":"Kg",
-       "img":"./img/pimientoRojo.jpg"
+       "price":340,
+       "un":"Kg",
+       "PictureURL":"./img/pimientoRojo.jpg"
     },
     {
        "id":12,
-       "nombre":"orégano",
-       "tipo":"especias",
+       "title":"orégano",
+       "type":"especias",
        "descripcion":"1 Un = 50 gr",
-       "precio":120,
-       "unidad":"Un",
-       "img":"./img/oregano.jpg"
+       "price":120,
+       "un":"Un",
+       "PictureURL":"./img/oregano.jpg"
     },
     {
        "id":13,
-       "nombre":"pimienta blanca",
-       "tipo":"especias",
+       "title":"pimienta blanca",
+       "type":"especias",
        "descripcion":"1 Un = 50 gr",
-       "precio":120,
-       "unidad":"Un",
-       "img":"./img/pimientab.jpg"
+       "price":120,
+       "un":"Un",
+       "PictureURL":"./img/pimientab.jpg"
     },
     {
        "id":14,
-       "nombre":"cereza",
-       "tipo":"fruta",
+       "title":"cereza",
+       "type":"fruta",
        "descripcion":"cerazas",
-       "precio":260,
-       "unidad":"kg",
-       "img":"./img/cereza.jpg"
+       "price":260,
+       "un":"kg",
+       "PictureURL":"./img/cereza.jpg"
     },
     {
        "id":15,
-       "nombre":"canela",
-       "tipo":"especias",
+       "title":"canela",
+       "type":"especias",
        "descripcion":"1 Un = 100 gr",
-       "precio":260,
-       "unidad":"Un",
-       "img":"./img/canela.jpg"
+       "price":260,
+       "un":"Un",
+       "PictureURL":"./img/canela.jpg"
     }
  ]

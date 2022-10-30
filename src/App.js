@@ -18,8 +18,7 @@ export default function App() {
         <ComponentTitle />
       </NavbarBootstrap>
       <ItemListContainer greeting={mensaje} />
-      {/* <ItemList/> */}
-      <Test/>
+      <ItemList/>
       <BodyApp/>
       <Footer/>
     </div>
