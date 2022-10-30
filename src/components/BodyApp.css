@@ -3,6 +3,10 @@ body {
     background-size:cover;
 }
 
+.card_flex {
+    display: inline-flex;
+}
+
 .card_container {
     background-color: white;
     display:inline-flex;

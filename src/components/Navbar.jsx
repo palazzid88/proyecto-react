@@ -50,6 +50,6 @@ const style = {
   flexDirection: 'row',
   color: 'red',
   alignItems: 'center',
-  }
+  },
 }
 

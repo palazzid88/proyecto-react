@@ -7,6 +7,7 @@ import BodyApp from "./components/BodyApp";
 import Footer from "./components/Footer";
 import { ComponentTitle } from './components/ComponentTitle';
 import ItemList from './components/ItemList';
+import Test from './components/Test';
 
 export default function App() {
 
@@ -17,7 +18,8 @@ export default function App() {
         <ComponentTitle />
       </NavbarBootstrap>
       <ItemListContainer greeting={mensaje} />
-      <ItemList/>
+      {/* <ItemList/> */}
+      <Test/>
       <BodyApp/>
       <Footer/>
     </div>
