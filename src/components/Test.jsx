@@ -2,16 +2,13 @@
 // import Item from './item';
 // import stock from "../../src/stock.json";
 
-
 // const obtenerProductos = new Promise((resolve, reject) => {
 //     setTimeout(()=> {
 //       resolve(productos);
 //       console.log(`time out 2s`, productos);
-//     }, 
-//     2000);  
+//     },
+//     2000);
 //   })
-
-  
 
 // const Test = () => {
 //     console.log(`antes del useState`, stock);
@@ -33,11 +30,10 @@
 //         setTimeout(()=> {
 //           resolve(productos);
 //           console.log(`time out 2s`, productos);
-//         }, 
-//         2000);  
+//         },
+//         2000);
 //       })
-      
-    
+
 //   return (
 //     productos.map(item => {
 //         return<div className='card_flex' key={item.id}><Item picture={item.PictureURL} title={item.title} description={item.description} price={item.price} un={item.un}/></div>
