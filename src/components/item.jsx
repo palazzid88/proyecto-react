@@ -1,7 +1,6 @@
 import React from 'react'
 import ItemCount from './ItemCount'
 import './BodyApp.css'
-import stock from "../stock.json";
 
 // Toma las props desde ItemList//
 const Item = ({picture, title, description, price, un}) => {
