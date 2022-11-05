@@ -21,9 +21,9 @@ export default function App() {
       </NavbarBootstrap>
         <Routes>
           <Route path='/' element={<ItemListContainer greeting={mensaje} />}/>
-          <Route path='/ItemList' element={<ItemList/>}/>
+          {/* <Route path='/ItemList' element={<ItemList/>}/>
           <Route path='/ItemDetail' element={<ItemDetail />}/>
-          <Route path='/Bodyapp' element={<BodyApp/>} />
+          <Route path='/Bodyapp' element={<BodyApp/>} /> */}
         </Routes>
       <Footer/>
       </BrowserRouter>

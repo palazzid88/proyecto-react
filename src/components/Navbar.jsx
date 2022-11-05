@@ -20,10 +20,10 @@ export default function NavbarBootstrap ({children}) {
           <Nav className="me-auto">
             <Nav.Link href="#home">Inicio</Nav.Link>
             <NavDropdown title="Tienda" id="basic-nav-dropdown">
-              <NavDropdown.Item href="http://www.google.com.ar">
+              <NavDropdown.Item link="http://www.google.com.ar">
                 Frutas
               </NavDropdown.Item>
-              <NavDropdown.Item href="https://www.youtube.com/">
+              <NavDropdown.Item link="https://www.youtube.com/">
                 Verduras
               </NavDropdown.Item>
               <NavDropdown.Item href="https://www.mercadolibre.com.ar/">
