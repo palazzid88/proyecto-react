@@ -9,6 +9,7 @@ import ItemList from './components/ItemList';
 import Test from './components/Test';
 import { ItemDetail } from './components/ItemDetail';
 import { browserRouter, Routes, Route, BrowserRouter } from "react-router-dom";
+import { Frutas } from './components/Frutas';
 
 export default function App() {
 
@@ -21,6 +22,7 @@ export default function App() {
       </NavbarBootstrap>
         <Routes>
           <Route path='/' element={<ItemListContainer greeting={mensaje} />}/>
+          <Route path='/category' element={<Frutas />}/>
           {/* <Route path='/ItemList' element={<ItemList/>}/>
           <Route path='/ItemDetail' element={<ItemDetail />}/>
           <Route path='/Bodyapp' element={<BodyApp/>} /> */}

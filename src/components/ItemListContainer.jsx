@@ -4,13 +4,13 @@ import banana from "../components/img/banana.jpg";
 import manzana from "../components/img/manzana.jpg";
 import frutilla from "../components/img/frutilla.jpg";
 import { ItemList } from './ItemList';
-// import manzanaVerde from "../components/img/manzanaVerde.jpg";
+import manzanaVerde from "../components/img/manzanaVerde.jpg";
 // import kiwi from "../components/img/kiwi.jpg";
 // import pera from "../components/img/pera.jpg";
 // import cereza from "../components/img/cereza.jpg";
-// import zanahoria from "../components/img/zanahoria.jpg";
-// import berenjena from "../components/img/berenjena.jpg";
-// import cebolla from "../components/img/cebolla.jpg";
+import zanahoria from "../components/img/zanahoria.jpg";
+import berenjena from "../components/img/berenjena.png";
+import cebolla from "../components/img/cebolla.jpg";
 // import oregano from "../components/img/oregano.jpg";
 // import pimientab from "../components/img/pimientab.jpg";
 // import pimientoRojo from "../components/img/pimientoRojo.jpg";
@@ -22,7 +22,12 @@ const productos = [
   {id:1, PictureURL: naranja, title: "naranja", description: "Naranja deombligo", price: 250, un: "Kg"},
   {id:2, PictureURL: banana, title: "banana", description: "Banana de Ecuador", price: 300, un: "Kg"},
   {id:3, PictureURL: manzana, title: "manzana", description: "Manzana Roja", price: 400, un: "Kg"},
-  {id:4, PictureURL: frutilla, title: "frutilla", description: "Frutilla roja", price: 500, un: "Kg"},
+  {id:4, PictureURL: manzanaVerde, title: "manzana verde", description: "Manzana Verde", price: 450, un: "Kg"},
+  {id:5, PictureURL: frutilla, title: "frutilla", description: "Frutilla roja", price: 500, un: "Kg"},
+  {id:6, PictureURL: zanahoria, title: "zanahoria", description: "zanahoria", price: 200, un: "Kg"},
+  {id:7, PictureURL: berenjena, title: "berenjena", description: "Berenjena Grande", price: 420, un: "Kg"},
+  {id:8, PictureURL: cebolla, title: "Cebolla", description: "Cebola blanca", price: 500, un: "Kg"},
+
 ];
 
 

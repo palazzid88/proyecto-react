@@ -46,3 +46,23 @@
 // }
 
 // export default Test
+
+
+
+
+// Header
+{/* <header>
+<Navbar bg="dark" variant="dark">
+<Container>
+  <Nav className="me-auto">
+    {
+      categorias.map((categoria)=> {
+        return <Nav.Link key={categoria.id} href={categoria.ruta}>{categoria.nombre}</Nav.Link>
+
+      })
+    }
+  </Nav>
+  <Cartwidget />
+</Container>
+</Navbar>
+</header> */}
