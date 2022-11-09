@@ -1,7 +1,6 @@
 import React from 'react'
 import './BodyApp.css'
 import Card from 'react-bootstrap/Card';
-// import ItemCount from "./ItemCount";
 import ItemCount from "./ItemCount";
 
 export default function BodyApp () {

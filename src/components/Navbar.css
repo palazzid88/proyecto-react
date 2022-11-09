@@ -18,6 +18,7 @@ header {
 }
 
 .container {
-    margin: 5px;
-    padding: 5px;
+    justify-content: space-between;
+    /* margin: 5px;
+    padding: 5px; */
 }

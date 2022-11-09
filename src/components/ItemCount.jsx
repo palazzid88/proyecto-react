@@ -22,7 +22,7 @@ export default function ItemCount ({initial, stock, onAdd}) {
 
   return (
     <>
-      <InputGroup>
+      <InputGroup style={style.container}>
         <Button disabled={count <=1} variant="outline-secondary" onClick={decrease}> - </Button>
         <p type="number" className="cantidad_input" style={style.container}>{count}</p>
         <Button disabled={count >= stock} variant="outline-secondary" onClick={increase}> + </Button>
@@ -30,7 +30,6 @@ export default function ItemCount ({initial, stock, onAdd}) {
           <Button disabled={stock <= 0} onClick={ () => onAdd(count)}> Añadir al Carrito </Button>
         </div>
         <div>
-          <Button>Ver Mas</Button>
         </div>
       </InputGroup>
     </>
@@ -40,8 +39,7 @@ export default function ItemCount ({initial, stock, onAdd}) {
 
 const style = {
   container: {
-    margin: 'auto',
-    width: '100',
-    displayInline: 'block'
+    alignItems: 'baseline',
+    justifyContent: 'center'
   } 
 }

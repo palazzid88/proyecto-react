@@ -1,6 +1,6 @@
 import React from 'react'
 import { useEffect, useState } from 'react';
-import { useParams } from 'react'
+import { useParams } from 'react-router-dom'
 import { productosStock } from "./data";
 import { ItemDetail } from './ItemDetail';
 
@@ -16,6 +16,7 @@ useEffect(()=> {
       resolve(productosStock.find((item)=> item.id == iditem));
     }, 2000);
   });
+
 
   productosPromesa
   .then(res=> {
