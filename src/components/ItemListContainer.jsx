@@ -1,66 +1,34 @@
 import React, { useEffect, useState } from 'react'
-import naranja from "../components/img/naranja.jpg";
-import banana from "../components/img/banana.jpg";
-import manzana from "../components/img/manzana.jpg";
-import frutilla from "../components/img/frutilla.jpg";
+import { useParams } from 'react-router-dom';
+import { productosStock } from "./data";
 import { ItemList } from './ItemList';
-import manzanaVerde from "../components/img/manzanaVerde.jpg";
-// import kiwi from "../components/img/kiwi.jpg";
-// import pera from "../components/img/pera.jpg";
-// import cereza from "../components/img/cereza.jpg";
-import zanahoria from "../components/img/zanahoria.jpg";
-import berenjena from "../components/img/berenjena.png";
-import cebolla from "../components/img/cebolla.jpg";
-// import oregano from "../components/img/oregano.jpg";
-// import pimientab from "../components/img/pimientab.jpg";
-// import pimientoRojo from "../components/img/pimientoRojo.jpg";
-// import stock from "../stock.json";
 
+export default function ItemListContainer({greeting}) {
+  const { idcategory } = useParams();
 
-//creo un array de objetos simulando los productos
-const productos = [
-  {id:1, PictureURL: naranja, title: "naranja", description: "Naranja deombligo", price: 250, un: "Kg"},
-  {id:2, PictureURL: banana, title: "banana", description: "Banana de Ecuador", price: 300, un: "Kg"},
-  {id:3, PictureURL: manzana, title: "manzana", description: "Manzana Roja", price: 400, un: "Kg"},
-  {id:4, PictureURL: manzanaVerde, title: "manzana verde", description: "Manzana Verde", price: 450, un: "Kg"},
-  {id:5, PictureURL: frutilla, title: "frutilla", description: "Frutilla roja", price: 500, un: "Kg"},
-  {id:6, PictureURL: zanahoria, title: "zanahoria", description: "zanahoria", price: 200, un: "Kg"},
-  {id:7, PictureURL: berenjena, title: "berenjena", description: "Berenjena Grande", price: 420, un: "Kg"},
-  {id:8, PictureURL: cebolla, title: "Cebolla", description: "Cebola blanca", price: 500, un: "Kg"},
+  const [productos, setProductos] = useState([]);
 
-];
+  useEffect(()=> {
+    const productosPromise = new Promise((resolve, reject) => {
+      setTimeout(() => {
+        resolve(productosStock);
+        console.log(productosStock);
+      }, 2000);
+  });
 
+  productosPromise.then((res) => {
+    if(idcategory) {
+      setProductos(res.filter((item) => item.category == idcategory));
+      console.log(`nuevo`, productos);
+    } else {
+      setProductos(res);
+    }
+  });
+}, [idcategory]);
 
-const obtenerProductos = new Promise((resolve, reject) => {
-  setTimeout(() => {
-    resolve(productos);
-    console.log(productos);
-  }, 2000);
-})
-
-
-export default function ItemListContainer ({greeting}) {
-    console.log(greeting);
-
-    const [productos, setProductos] = useState([]);
-    
-    useEffect(() => {
-      obtenerProductos
-      .then((data) => {
-        setProductos(data)
-        console.log(`useEffect`, data);
-      })
-      .catch((error) => {
-        console.log(`algo salió mal`);
-      })
-    }, []);
-    
-
-
-
-  return (
-    productos.map(item => {
-      return <div className='card_flex' key={item.id}><ItemList picture={item.PictureURL} title={item.title} description={item.description} price={item.price} un={item.un}/></div>
-    })
-  )
+return(
+  <div>
+    <ItemList productos={productos} />
+  </div>
+);
 }

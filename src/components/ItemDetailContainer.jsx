@@ -1,38 +1,32 @@
 import React from 'react'
-import { useEffect } from 'react';
-import { useState } from 'react'
-import ItemDetail from "./itemDetail";
+import { useEffect, useState } from 'react';
+import { useParams } from 'react'
+import { productosStock } from "./data";
+import { ItemDetail } from './ItemDetail';
 
-export const ItemDetail = () => {
+export const ItemDetailContainer = () => {
+  const { iditem } = useParams();
 
-  const [stock, setStock] = useState([]);
+  const [stock, setStock] = useState({});
+
 
 useEffect(()=> {
-  fetch('/data/stock.json')
-  .then(res=> res.json())
-  .then((resJson) => {
-setTimeout(()=> {
-  console.log(`logfetch`, resJson);
-  setStock(resJson)
-}, 2000);
-  })
-  .catch((e)=> {
-    console.log(e);
-  })
-  .finally(()=> {
-    console.log("finally");
-  })
-},[])
+  const productosPromesa = new Promise((resolve, reject) => {
+    setTimeout(() => {
+      resolve(productosStock.find((item)=> item.id == iditem));
+    }, 2000);
+  });
+
+  productosPromesa
+  .then(res=> {
+    setStock(res);
+    console.log(`setStock`, res);
+  });
+},[iditem]);
+
   return (
-    stock.map(item => {
-      return(
-      <div className='card_flex' key={item.id}>
-        <ItemDetail picture={item.PictureURL} 
-        title={item.title} 
-        description={item.description} 
-        price={item.price} 
-        un={item.un}/>
-        </div>
-  )
-}))
+    <div>
+      <ItemDetail stock={stock}/>
+    </div>
+)
 }

@@ -1,38 +1,20 @@
 import React from 'react'
-import { useEffect } from 'react';
-import { useState } from 'react'
-import Item from "./item";
+import ItemCount from './ItemCount'
 
-export const ItemDetail = () => {
+export const ItemDetail = ({ stock }) => {
+  function addItem(x) {
+    console.log("puede añadir " + x + " de este producto: " + stock.title);
+    
+  }
+  return(
+    <div className='card_flex'>
+      <img>{stock.PictureURL}</img> 
+      <p>{stock.title}</p> 
+      <p>{stock.description}</p> 
+      <p>{stock.price}</p> 
+      <p>{stock.un}</p>
+        <ItemCount initial={1} stock={5} addItem={addItem}/>
+    </div>
+  )}
 
-  const [stock, setStock] = useState([]);
 
-useEffect(()=> {
-  fetch('/data/stock.json')
-  .then(res=> res.json())
-  .then((resJson) => {
-setTimeout(()=> {
-  console.log(`logfetch`, resJson);
-  setStock(resJson)
-}, 2000);
-  })
-  .catch((e)=> {
-    console.log(e);
-  })
-  .finally(()=> {
-    console.log("finally");
-  })
-},[])
-  return (
-    stock.map(item => {
-      return(
-      <div className='card_flex' key={item.id}>
-        <Item picture={item.PictureURL} 
-        title={item.title} 
-        description={item.description} 
-        price={item.price} 
-        un={item.un}/>
-        </div>
-  )
-}))
-}

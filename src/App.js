@@ -1,15 +1,10 @@
-import logo from './logo.svg';
 import './App.css';
-import NavbarBootstrap from './components/Navbar';
-import ItemListContainer from './components/ItemListContainer';
-import BodyApp from "./components/BodyApp";
-import Footer from "./components/Footer";
+import { BrowserRouter, Routes, Route} from "react-router-dom";
+import NavBar from './components/Navbar';
 import { ComponentTitle } from './components/ComponentTitle';
-import ItemList from './components/ItemList';
-import Test from './components/Test';
-import { ItemDetail } from './components/ItemDetail';
-import { browserRouter, Routes, Route, BrowserRouter } from "react-router-dom";
-import { Frutas } from './components/Frutas';
+import { ItemDetailContainer } from './components/ItemDetailContainer';
+import ItemListContainer from './components/ItemListContainer';
+import Footer from "./components/Footer";
 
 export default function App() {
 
@@ -17,14 +12,14 @@ export default function App() {
   return (
     <div className="App">
       <BrowserRouter>
-      <NavbarBootstrap>
+        <NavBar />
         <ComponentTitle />
-      </NavbarBootstrap>
         <Routes>
-          <Route path='/' element={<ItemListContainer greeting={mensaje} />}/>
-          <Route path='/category' element={<Frutas />}/>
+          <Route path='/' element={<ItemListContainer />}/>
+          {/* <Route path='/category/productos' element={<ItemListContainer />}/> */}
+          <Route path='/category/:idcategory' element={<ItemListContainer />}/>
+          <Route path='/item/:iditem' element={<ItemDetailContainer />}/>
           {/* <Route path='/ItemList' element={<ItemList/>}/>
-          <Route path='/ItemDetail' element={<ItemDetail />}/>
           <Route path='/Bodyapp' element={<BodyApp/>} /> */}
         </Routes>
       <Footer/>
