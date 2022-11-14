@@ -2,12 +2,13 @@ import React from 'react'
 import { Button } from 'react-bootstrap';
 import { Link } from 'react-router-dom'
 import "./BodyApp.css";
+import { ItemList } from "./ItemList";
 
 export const Item = ( { item }) => {
   return (
     <div key={item.id} className="card_flex">
         {
-            <div className='card_flex'>
+            <div>
             <div className='card_container'>
                 <picture className='card__picture'>
                     <img className='img' src={item.PictureURL}></img>

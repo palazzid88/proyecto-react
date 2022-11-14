@@ -6,7 +6,7 @@ import InputGroup from 'react-bootstrap/InputGroup';
 
 
 
-export default function ItemCount ({initial, stock, onAdd}) {
+export default function ItemCount ({initial, stock, addItem}) {
     const [count, setCount] = useState(parseInt(initial));
 
     const decrease = () => {
@@ -27,7 +27,7 @@ export default function ItemCount ({initial, stock, onAdd}) {
         <p type="number" className="cantidad_input" style={style.container}>{count}</p>
         <Button disabled={count >= stock} variant="outline-secondary" onClick={increase}> + </Button>
         <div>
-          <Button disabled={stock <= 0} onClick={ () => onAdd(count)}> Añadir al Carrito </Button>
+          <Button disabled={stock <= 0} onClick={ () => addItem(count)/*onAdd(count)*/}> Añadir al Carrito </Button>
         </div>
         <div>
         </div>

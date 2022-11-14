@@ -18,7 +18,7 @@ export default function ItemListContainer({greeting}) {
 
   productosPromise.then((res) => {
     if(idcategory) {
-      setProductos(res.filter((item) => item.category == idcategory));
+      setProductos(res.filter((item) => item.category === idcategory));
       console.log(`nuevo`, productos);
     } else {
       setProductos(res);

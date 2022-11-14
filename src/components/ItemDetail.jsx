@@ -3,8 +3,8 @@ import ItemCount from './ItemCount'
 import "./BodyApp.css"
 
 export const ItemDetail = ({ stock }) => {
-  function addItem(x) {
-    console.log("puede añadir " + x + " de este producto: " + stock.title);
+  function addItem(cant) {
+    console.log("puede añadir " + cant + " de este producto: " + stock.title);
     
   }
   return(
