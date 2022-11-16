@@ -16,7 +16,7 @@ export const ItemDetail = ({ stock }) => {
         <h3 className='title__card'>{stock.title}</h3> 
         <p className='parraph__card'>{stock.description}</p> 
         <p className='parraph__card'>${stock.price} por {stock.un}</p> 
-          <ItemCount initial={1} stock={5} addItem={addItem}/>
+          <ItemCount initial={1} stock={5} addItem={addItem} prod={stock.title}/>
       </div>
       </>
     ) :(

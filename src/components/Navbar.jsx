@@ -1,4 +1,4 @@
-import React, { useContext } from 'react';
+import React from 'react';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import { Link } from 'react-router-dom';
 import Cartwidget from './CartWidget';
@@ -8,8 +8,7 @@ import Container from 'react-bootstrap/Container';
 import Nav from 'react-bootstrap/Nav';
 import Navbar from 'react-bootstrap/Navbar';
 import { ComponentTitle } from './ComponentTitle';
-import { Button } from 'react-bootstrap';
-import { allContext } from './ContextContainer';
+// import { Button } from 'react-bootstrap';
 
 
 const pages = [
@@ -21,7 +20,6 @@ const pages = [
 
 
 export default function NavBar() {
-  const {darkMode, setDarkmode} = useContext(allContext);
   return (
     <>
     <Navbar bg="light" expand="lg">
@@ -37,9 +35,6 @@ export default function NavBar() {
                 {page.label}
               </Nav.Link>
             ))}
-          </Nav>
-          <Nav>
-            <Button onClick={()=> setDarkmode(!darkMode)}>claro/oscuro</Button>
           </Nav>
           <Cartwidget />
         </Navbar.Collapse>

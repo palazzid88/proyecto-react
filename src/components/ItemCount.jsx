@@ -1,12 +1,10 @@
-import React, { useState, useEffect } from "react";
+import React, { useState } from "react";
 import Button from 'react-bootstrap/Button';
-import Form from 'react-bootstrap/Form';
+// import Form from 'react-bootstrap/Form';
 import InputGroup from 'react-bootstrap/InputGroup';
+// import { cartContext } from "../Context/CartContextComponent";
 
-
-
-
-export default function ItemCount ({initial, stock, addItem}) {
+export default function ItemCount ({initial, stock, addItem, prod}) {
     const [count, setCount] = useState(parseInt(initial));
 
     const decrease = () => {
@@ -16,9 +14,16 @@ export default function ItemCount ({initial, stock, addItem}) {
       setCount(count + 1);
     }
 
-    useEffect( () => {
-      setCount(parseInt(initial));
-    }, [initial])
+    // useEffect( () => {
+    //   setCount(parseInt(initial));
+    // }, [initial])
+
+    function addItem () {
+      console.log('cantidad', count);
+      console.log(prod);
+      // console.log(cart);
+      console.log('Hola');
+    }
 
   return (
     <>

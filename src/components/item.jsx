@@ -2,7 +2,7 @@ import React from 'react'
 import { Button } from 'react-bootstrap';
 import { Link } from 'react-router-dom'
 import "./BodyApp.css";
-import { ItemList } from "./ItemList";
+// import { ItemList } from "./ItemList";
 
 export const Item = ( { item }) => {
   return (
