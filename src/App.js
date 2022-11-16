@@ -11,7 +11,7 @@ export default function App() {
 
   return (
     <div className="App">
-      {/* <CartContextComponent> */}
+      <CartContextComponent>
       <BrowserRouter>
         <NavBar />
         <Routes>
@@ -23,7 +23,7 @@ export default function App() {
         </Routes>
       <Footer/>
       </BrowserRouter>
-      {/* </CartContextComponent> */}
+      </CartContextComponent>
     </div>
   );
 }
