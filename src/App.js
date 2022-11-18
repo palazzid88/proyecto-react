@@ -6,12 +6,12 @@ import Footer from "./components/Footer";
 import './App.css';
 import Cart from "./components/Cart";
 import { Checkout } from "./components/Checkout";
-import CartContextComponent from "./Context/CartContextComponent";
+import CartContext from "./Context/CartContextComponent";
 export default function App() {
 
   return (
     <div className="App">
-      <CartContextComponent>
+      <CartContext>
       <BrowserRouter>
         <NavBar />
         <Routes>
@@ -23,7 +23,7 @@ export default function App() {
         </Routes>
       <Footer/>
       </BrowserRouter>
-      </CartContextComponent>
+      </CartContext>
     </div>
   );
 }

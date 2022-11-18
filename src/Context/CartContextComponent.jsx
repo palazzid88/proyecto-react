@@ -3,7 +3,7 @@ import { useState, createContext } from 'react';
 
 export const cartContext = createContext();
 
-export default function CartContextComp({ Children }) {
+export default function CartContext({ Children }) {
     // almacenamos al carrito en un estado:
     const [cart, setCart] = useState([{id: 100, name: "papa"}]);
 
@@ -11,7 +11,7 @@ export default function CartContextComp({ Children }) {
 
 
   return (
-    <cartContext.Provider value={{cart, setCart}}>
+    <cartContext.Provider value={{cart}}>
         {Children}
     </cartContext.Provider>
   );
