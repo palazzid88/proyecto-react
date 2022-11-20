@@ -22,8 +22,8 @@ export default function ItemCount ({initial, stock, onAdd, prod}) {
     function onAdd () {
       addToCart(prod, count);
       console.log("Itemcount", prod, count);
-      // console.log(prod);
-      // console.log("count", cart);
+      console.log(prod);
+      console.log(cart);
     }
 
   return (

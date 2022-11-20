@@ -21,6 +21,7 @@ export default function CartContext({ children }) {
           const actualizado = cart.map((item) =>{
             if (item.id === prod.id) {
               item.count += count;              
+              // console.log("actual", actualizado);
             }
             return item
           });
@@ -47,11 +48,18 @@ export default function CartContext({ children }) {
       
 
       const isInCart = (id) => cart.some((prod) => prod.id == id);
+
+      const clear = () => {
+        setCart([]);
+        console.log(setCart);
+        setCant(0);
+        setTotal(0);
+      };
     
   
 
   return (
-    <cartContext.Provider value={{cart, addToCart}}>
+    <cartContext.Provider value={{cart, cant, total, addToCart, deleteProd, clear, removeProd}}>
         {children}
     </cartContext.Provider>
   );
