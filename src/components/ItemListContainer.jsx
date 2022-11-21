@@ -1,7 +1,9 @@
+import { format } from 'prettier';
 import React, { useEffect, useState } from 'react'
 import { useParams } from 'react-router-dom';
 import { productosStock } from "./data";
 import { ItemList } from './ItemList';
+import { getFirestore, collection, getDocs, query, where } from 'firebase/firestore'
 
 export default function ItemListContainer({greeting}) {
   const { idcategory } = useParams();
@@ -9,20 +11,25 @@ export default function ItemListContainer({greeting}) {
   const [productos, setProductos] = useState([]);
 
   useEffect(()=> {
-    const productosPromise = new Promise((resolve, reject) => {
-      setTimeout(() => {
-        resolve(productosStock);
-        console.log(productosStock);
-      }, 2000);
-  });
+    const db = getFirestore();
+    const productos = query(collection(db, "productos"), 
+    // where("category", "==", idcategory)
+    );
 
-  productosPromise.then((res) => {
-    if(idcategory) {
-      setProductos(res.filter((item) => item.category === idcategory));
-      console.log(`nuevo`, productos);
-    } else {
-      setProductos(res);
-    }
+    getDocs(productos).then(res => {
+      console.log(res.docs);
+      const newArray = res.docs.map((producto) => {
+        return { 
+          id: producto.id, title: producto.data().title, category: producto.data().category, description: producto.data().description, img: producto.data().img, price: producto.data().price, un: producto.data().un }
+      // })
+      // setProductos(newArray);
+    });
+    // if(idcategory) {
+    //   setProductos(newArray.filter((item) => item.category === idcategory));
+      console.log(`nuevo`, newArray);
+    // } else {
+      setProductos(newArray);
+    // }
   });
 }, [idcategory]);
 

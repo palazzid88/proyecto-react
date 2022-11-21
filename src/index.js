@@ -4,6 +4,20 @@ import './index.css';
 import App from './App';
 import reportWebVitals from './reportWebVitals';
 
+import { initializeApp } from "firebase/app";
+
+const firebaseConfig = {
+  apiKey: "AIzaSyBydBAJMThx94GL6qpIyciFaSU2sjPY9Cw",
+  authDomain: "proyecto-react-44970.firebaseapp.com",
+  projectId: "proyecto-react-44970",
+  storageBucket: "proyecto-react-44970.appspot.com",
+  messagingSenderId: "764419782296",
+  appId: "1:764419782296:web:b7741ab4a2b1572f8e42ed"
+};
+
+// Initialize Firebase
+initializeApp(firebaseConfig);
+
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
   <React.StrictMode>
