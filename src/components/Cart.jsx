@@ -8,7 +8,7 @@
 
 
 // export default function Cart() {
-//   const {cart, total, clear, cant} = useContext(CartContext) 
+//   const {cart, total, clear, qty} = useContext(CartContext) 
 
 //   const [pedido, setPedido] = useState("");
 //   const comprador = {

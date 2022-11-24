@@ -29,7 +29,7 @@ export default function CartContext({ children }) {
           });
           setCart(actualizado);
         } else {
-          setCart ([...cart, {...item, cantidad }]);
+          setCart ([...cart, { ...item, cantidad }]);
         }
         setQty (qty + cantidad);
         setTotal(total + (item.price * cantidad));
