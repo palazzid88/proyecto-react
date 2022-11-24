@@ -1,3 +1,4 @@
+import { getFirestore } from 'firebase/firestore';
 import React, { useEffect } from 'react'
 import { useState, createContext } from 'react';
 
@@ -5,61 +6,62 @@ export const cartContext = createContext();
 
 export default function CartContext({ children }) {
 
-    // almacenamos al carrito en un estado:
+    // almacenamos al carrito/cantidad/total en un estado:
     const [cart, setCart] = useState([]);
-    const [cant, setCant] = useState([0]);
+    const [qty, setQty] = useState([0]);
     const [total, setTotal] = useState([0])
 
     useEffect(() => {
-      setCant (cart.reduce((total, prod) => total + prod.count, 0));
-      setTotal (cart.reduce((total, prod) => total + (prod.cantidad * prod.precio), 0))
+      const db = getFirestore();
+      setQty (cart.reduce((total, item) => total + item.cantidad, 0));
+      setTotal (cart.reduce((total, item) => total + (item.cantidad * item.precio), 0))
     }, [])
 
 
-      const addToCart = (prod, count) => {
-        if (isInCart(prod.id)) {
-          const actualizado = cart.map((item) =>{
-            if (item.id === prod.id) {
-              item.count += count;              
-              // console.log("actual", actualizado);
+      const addItem = (item, cantidad) => {
+        if (isInCart(item.id)) {
+          const actualizado = cart.map((producto) =>{
+            if (producto.id === item.id) {
+              producto.cantidad += cantidad;              
+              // console.log("actual", producto);
             }
-            return item
+            return producto
           });
-          setCart(actualizado);          
+          setCart(actualizado);
         } else {
-          setCart ([...cart, {...prod, count}]);
+          setCart ([...cart, {...item, cantidad }]);
         }
-        setCant (cant + count);
-        setTotal(total + (prod.precio * count));
-      }
+        setQty (qty + cantidad);
+        setTotal(total + (item.price * cantidad));
+      };
 
 
-      const deleteProd = (id) =>  {
+      const deleteItem = (id) =>  {
         const found = cart.find((producto => producto.id === id ));
-        setCart(cart.filter ((prod) => prod.id !== id))
-        setCant (cant - found.count)
-        setTotal (total - (found.precio * found.count))
+        setCart(cart.filter ((item) => item.id !== id))
+        setQty (qty - found.cantidad)
+        setTotal (total - (found.precio * found.cantidad))
+      };
+      
+
+      const removeItem = (itemid) => {
+        setCart(cart.filter((item) => item.id !== itemid));
       }
       
 
-      const removeProd = (id) => {
-        setCart(cart.filter((prod) => prod.id !== id));
-      }
-      
-
-      const isInCart = (id) => cart.some((prod) => prod.id == id);
+      const isInCart = (id) => cart.some((item) => item.id === id);
 
       const clear = () => {
         setCart([]);
         console.log(setCart);
-        setCant(0);
+        setQty(0);
         setTotal(0);
       };
     
   
 
   return (
-    <cartContext.Provider value={{cart, cant, total, addToCart, deleteProd, clear, removeProd}}>
+    <cartContext.Provider value={{cart, qty, total, addItem, deleteItem, clear, removeItem}}>
         {children}
     </cartContext.Provider>
   );

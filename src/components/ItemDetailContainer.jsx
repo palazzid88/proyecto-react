@@ -1,33 +1,41 @@
+import { collection, getDoc, getFirestore, where, doc } from 'firebase/firestore';
 import React from 'react'
 import { useEffect, useState } from 'react';
 import { useParams } from 'react-router-dom'
 import { productosStock } from "./data";
 import { ItemDetail } from './ItemDetail';
 
+
 export const ItemDetailContainer = () => {
-  const { iditem } = useParams();
 
   const [stock, setStock] = useState({});
+  const [loading, setLoading] = useState(true);
+  const { iditem } = useParams();
 
 
 useEffect(()=> {
-  const productosPromesa = new Promise((resolve, reject) => {
-    setTimeout(() => {
-      resolve(productosStock.find((item)=> item.id == iditem));
-    }, 2000);
-  });
+  const db = getFirestore();
+  const productosPromesa = collection (db, 'productos')
+    const refDoc = doc (productosPromesa, iditem)
 
-
-  productosPromesa
-  .then(res=> {
-    setStock(res);
-    console.log(`setStock`, res);
-  });
-},[iditem]);
+    getDoc(refDoc)
+    .then(res => {
+      setStock({
+        id: res.id,
+        ...res.data()
+      })
+    })
+    .catch((error) => {
+      console.log("error");
+    })
+    .finally(()=> {
+      setLoading(false)
+    })
+  }, [iditem]);
 
   return (
     <div>
-      <ItemDetail stock={stock}/>
+      { loading ? <h1>Cargando</h1> : <ItemDetail stock={stock}/>}
     </div>
 )
 }
