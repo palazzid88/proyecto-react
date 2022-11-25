@@ -1,6 +1,8 @@
 import React, { useContext, useState } from 'react'
 import { json } from 'react-router-dom';
 import { cartContext } from "../Context/CartContextComponent";
+import { addDoc, doc,updateDoc, collection, getFirestore } from "firebase/firestore";
+import { increment } from 'firebase/firestore';
 
 
 export const Checkout = () => {
@@ -20,8 +22,19 @@ export const Checkout = () => {
         total: total,
       };
       console.log("quiere comprar", pedido);
-    }
 
+      const db = getFirestore();
+
+      const pedidos = collection(db, 'pedidos' );
+      addDoc(pedidos, pedido).then((pedidoInsertado) => {
+        console.log(pedidoInsertado.id);
+        
+        cart.forEach(item => {
+          const documento = doc(db, 'productos', item.id);
+          updateDoc(documento, { stock: increment(-item.cantidad) });
+        });
+        });
+      }
 
   return (
     <>

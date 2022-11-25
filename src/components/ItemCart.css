@@ -1,0 +1,19 @@
+
+.section-cart {
+    display: flex;
+    flex-direction: column;
+    border: solid 1px, grey;
+}
+
+.div-cart {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: baseline;
+}
+
+.p-cart {
+    margin: 10px;
+    padding: 10px;
+}

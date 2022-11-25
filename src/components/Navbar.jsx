@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useContext } from 'react';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import { Link } from 'react-router-dom';
 import Cartwidget from './CartWidget';
@@ -8,6 +8,9 @@ import Container from 'react-bootstrap/Container';
 import Nav from 'react-bootstrap/Nav';
 import Navbar from 'react-bootstrap/Navbar';
 import { ComponentTitle } from './ComponentTitle';
+import { Button } from 'react-bootstrap';
+import context from 'react-bootstrap/esm/AccordionContext';
+import { cartContext } from '../Context/CartContextComponent';
 // import { Button } from 'react-bootstrap';
 
 
@@ -16,11 +19,15 @@ const pages = [
   {label: 'Frutas', id:2, link: '/category/frutas' },
   {label: 'Verduras', id:3, link: '/category/verduras' },
   {label: 'Especias', id:4, link: '/category/especias' },
-  {label: 'checkout', id:5, link: '/Checkout' }
+  {label: 'checkout', id:5, link: '/Checkout' },
+  {label: 'cart', id:5, link: '/Cart' }
+
 ]
 
 
 export default function NavBar() {
+  const {qty} = useContext(context)
+
   return (
     <>
     <Navbar bg="light" expand="lg">
@@ -37,7 +44,7 @@ export default function NavBar() {
               </Nav.Link>
             ))}
           </Nav>
-          <Cartwidget />
+          <button className='cartbtn'><Cartwidget /></button>
         </Navbar.Collapse>
       </Container>
     </Navbar>
