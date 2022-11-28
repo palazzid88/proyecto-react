@@ -10,11 +10,16 @@ export default function ItemListContainer({greeting}) {
 
   const [productos, setProductos] = useState([]);
 
-  useEffect(()=> {
-    const db = getFirestore();
-    const productos = query(collection(db, "productos"), 
-    // where("category", "==", idcategory)
-    );
+    
+    useEffect(() => {
+      const db = getFirestore();
+      let productos;
+      if (idcategory) {
+        productos = query(collection(db, 'productos'), where('category', '==', idcategory));
+      } else {
+        productos = collection(db, 'productos');
+      }
+
 
     getDocs(productos).then(res => {
       console.log(res.docs);
