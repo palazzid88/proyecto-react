@@ -2,27 +2,27 @@ import React from 'react'
 import { Button } from 'react-bootstrap';
 import { Link } from 'react-router-dom'
 import "./BodyApp.css";
-// import { ItemList } from "./ItemList";
+import { ItemList } from "./ItemList";
 
-export const Item = ( { item }) => {
+export const Item = ( { productos }) => {
   return (
-    <div key={item.id} className="card_flex">
+    <div key={productos.id} className="card_flex">
         {
             <div>
             <div className='card_container'>
                 <picture className='card__picture'>
-                    <img className='img' src={item.PictureURL}></img>
+                    <img className='img' src={productos.img} />
                 </picture>
             </div>
             <div className='info_card'>
-                <h2 className='title__card'>{item.title}</h2>
-                <p className='parraph__card'>{item.description}</p>
-                <p className='parraph__card'>Precio: ${item.price} por {item.un}</p>
+                <h2 className='title__card'>{productos.title}</h2>
+                <p className='parraph__card'>{productos.description}</p>
+                <p className='parraph__card'>Precio: ${productos.price} por {productos.un}</p>
             </div>
     
     </div>
         }
-    <Link to={"/item/" + item.id}>
+    <Link to={"/item/" + productos.id}>
         <Button className="btn_acction" >Ver Más</Button>
     </Link>
     </div>

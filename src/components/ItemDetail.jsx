@@ -18,7 +18,7 @@ export const ItemDetail = ({ stock }) => {
     {stock.id ? (
       <>
       <div className='card_container'>
-        {/* <img className='card_flex' src={stock.PictureURL}></img>  */}
+        <img className='' src={stock.img}></img> 
         <h3 className='title__card'>{stock.title}</h3> 
         <p className='parraph__card'>{stock.description}</p> 
         <p className='parraph__card'>${stock.price} por {stock.un}</p> 
