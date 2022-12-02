@@ -5,11 +5,14 @@ import { cartContext } from "../Context/CartContextComponent";
 import context from "react-bootstrap/esm/AccordionContext";
 
 export default function Cartwidget () {
-    const {qty} = useContext (context)
+    const {qty} = useContext(cartContext);
     
     return (
-        // <div>
-        <img src="./img/carrito.png" className="img_carrito" ></img>
-        // </div>
+        <div className="cart-qty">
+            <Link to={"/cart"} as={Link}>
+        <i className="bi bi-cart3"></i>
+            </Link>
+        <span className="">{qty}</span>
+        </div>
         )
 }

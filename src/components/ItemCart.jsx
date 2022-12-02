@@ -6,42 +6,39 @@ import Table from 'react-bootstrap/Table';
 import  "./ItemCart.css"
 import { Button } from 'bootstrap';
 import CloseButton from 'react-bootstrap/CloseButton';
+import { clear } from '@testing-library/user-event/dist/clear';
+import { Checkout } from './Checkout';
 
 
-export const ItemCart = ({product, finalizarCompra}) => {
+export const ItemCart = ({ product, finalizarCompra }) => {
     console.log( 'ItemCart', product);
-    console.log('total', product.cantidad * product.price);
-    const {removeItem} = useContext(cartContext)
+    console.log('total0', product.cantidad * product.price);
+    const {deleteItem, cart } = useContext(cartContext)
 
   return (
-    <>
-
-    <div>
-    
-        <Table striped bordered hover>
-          <thead>
-            <tr>
-              {/* <th>#</th> */}
-              <th>Precio</th>
-              <th>Producto</th>
-              <th>Cantidad</th>
-              <th>Subtotal</th>
-            </tr>
-          </thead>
-          <tbody>
-            <tr>
-              {/* <td><img>{product.img}</img></td> */}
-              <td>${product.price}</td>
-              <td>{product.title}</td>
-              <td>{product.cantidad}</td>
-              <td>${product.price * product.cantidad}</td>
-              <CloseButton onClick={()=> removeItem(product.id)} aria-label="Hide" />
-              {/* <button onClick={() => removeItem(product.id)}>Eliminar</button> */}
-            </tr>
-          </tbody>
-        </Table>
-        </div>
+  <>
+    <div className='div-cart'>    
+            <div>
+              <img className='img-cart' src={product.img} />
+            </div>
+            <div className='div-prod'>
+              <div>
+                <h3>{product.title}</h3>
+              </div>
+              <div>
+                <p>cant: {product.cantidad}</p>
+                <p>precio: ${product.price}</p>
+                <p>total: ${product.price * product.cantidad}</p>
+                <CloseButton onClick={()=> deleteItem(product.id)} aria-label="Hide" />
+              </div>
+            </div>
+          {/* </tbody> */}
+        {/* ))} */}
+        {/* </Table> */}
+    </div>
+          {/* < Checkout key={product.id} product = { product } /> */}
         </>
+        
       );
     }
     

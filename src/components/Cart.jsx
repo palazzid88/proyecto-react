@@ -7,6 +7,9 @@ import { ItemCart } from './ItemCart';
 import { Link } from 'react-router-dom';
 import { cartContext } from '../Context/CartContextComponent';
 import { Checkout } from './Checkout';
+import huerta from "../components/img/huerta.jpg"
+import  "./ItemCart.css"
+
 
 
 
@@ -57,7 +60,7 @@ export default function Cart() {
   const actualizarStock =()=> {
     cart.forEach(item => {
       const product = doc(db, "productos", item.id);
-      updateDoc(product, {stock: item.stock - item.cant})      
+      updateDoc(product, {stock: item.stock - item.qty})      
     });
   }
   return (
@@ -65,9 +68,12 @@ export default function Cart() {
     <div>
         {cart.length === 0 ? (
             <>
-            <h5 className=''>
-                Carrito vacío <Link to="/">Comprar</Link>
-            </h5>
+            <section>
+              <h5 className=''>
+                Aún no has agregado ningún producto al carrrito, ingresa al siguiente link para comprar 
+              </h5>
+              <Link to="/">Comprar</Link>
+            </section>
             </>
 
         ) : (
@@ -77,9 +83,12 @@ export default function Cart() {
                 < ItemCart key={producto.id} product = { producto } />
             ))}
             {/* <Checkout /> */}
-            <Link to={"/checkout"}>
-                <button className="btn-finalizar" onClick={finalizarCompra} variant="contained"> Finalizar Compra </button>
-            </Link>
+            <div className='div-checkout'>
+              <Link to={"/checkout"}>
+                  <button className="btn-finalizar" /*onClick={finalizarCompra}*/ variant="contained"> Finalizar Compra </button>
+              </Link>
+              <button onClick={()=> clear()} aria-label="Hide">Vaciar Carrito</button>
+            </div>
             </>
         )}
     </div>

@@ -20,7 +20,7 @@ const pages = [
   {label: 'Verduras', id:3, link: '/category/verduras' },
   {label: 'Especias', id:4, link: '/category/especias' },
   {label: 'checkout', id:5, link: '/Checkout' },
-  {label: 'cart', id:5, link: '/Cart' }
+  // {label: 'cart', id:5, link: '/Cart' }
 
 ]
 
@@ -44,7 +44,7 @@ export default function NavBar() {
               </Nav.Link>
             ))}
           </Nav>
-          <button className='cartbtn'><Cartwidget /></button>
+          <Cartwidget />
         </Navbar.Collapse>
       </Container>
     </Navbar>

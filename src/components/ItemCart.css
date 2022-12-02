@@ -5,14 +5,37 @@
 }
 
 .div-cart {
+    /* display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;*/
+    justify-content: center;
+    align-items: baseline;
     display: flex;
     flex-direction: row;
     flex-wrap: wrap;
-    justify-content: center;
-    align-items: baseline;
+    /* width: 25%; */
 }
 
 .p-cart {
     margin: 10px;
     padding: 10px;
+}
+
+.img-cart {
+    width: 40%;
+}
+
+.div-prod {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-evenly;
+    align-items: baseline;
+    margin: 2px;
+    padding: 2px;
+}
+
+.div-checkout {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-evenly;
 }

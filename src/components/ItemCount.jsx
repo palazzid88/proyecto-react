@@ -2,6 +2,7 @@ import React, { useContext, useState } from "react";
 import Button from 'react-bootstrap/Button';
 // import Form from 'react-bootstrap/Form';
 import InputGroup from 'react-bootstrap/InputGroup';
+import { Link } from "react-router-dom";
 import { cartContext } from "../Context/CartContextComponent";
 
 export default function ItemCount ({initial, stock, onAdd, prod}) {
@@ -29,7 +30,9 @@ export default function ItemCount ({initial, stock, onAdd, prod}) {
         <p type="number" className="cantidad_input" style={style.container}>{count}</p>
         <Button disabled={count >= stock} variant="outline-secondary" onClick={clickSumar}> + </Button>
         <div>
-          <Button disabled={stock <= 0} onClick={ () => onAdd(count)}> Añadir al Carrito </Button>
+          <Link as={Link} to={"/"}>
+            <Button disabled={stock <= 0} onClick={ () => onAdd(count)}> Añadir al Carrito </Button>
+          </Link>
         </div>
         <div>
         </div>
