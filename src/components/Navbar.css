@@ -21,3 +21,6 @@ header {
     flex-direction: column;
     justify-content: space-between;
 }
+.navbar {
+    margin-bottom: 30px;
+}

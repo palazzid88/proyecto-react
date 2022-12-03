@@ -1,7 +1,14 @@
 
-.section-cart {
+/* .section-cart {
     display: flex;
     flex-direction: column;
+} */
+
+.cart-div {
+    display: flex;
+    justify-content: center;
+    border-bottom: 1px groove lightgray;
+    margin: 10px;
 }
 
 .div-cart {
@@ -13,6 +20,7 @@
     display: flex;
     flex-direction: row;
     flex-wrap: wrap;
+
     /* width: 25%; */
 }
 
@@ -27,9 +35,9 @@
 
 .div-prod {
     display: flex;
-    flex-direction: row;
+    flex-direction: column;
     justify-content: space-evenly;
-    align-items: baseline;
+    align-items: center;
     margin: 2px;
     padding: 2px;
 }
@@ -38,4 +46,23 @@
     display: flex;
     flex-direction: row;
     justify-content: space-evenly;
+    margin: 5px;
+    padding: 5px;
+}
+.div-item {
+    display: flex;
+    flex-direction: row;
+    margin: 5px;
+    padding: 5px;
+}
+.p-item {
+    margin: 5px;
+    padding: 5px;
+}
+
+.p-item-total {
+    border: 1px solid grey;
+    border-radius: 5px;
+    margin: auto;
+    padding: 5px;
 }

@@ -7,7 +7,7 @@ export const cartContext = createContext();
 export default function CartContext({ children }) {
 
     // almacenamos al carrito/cantidad/total en un estado:
-    const [cart, setCart] = useState([]);
+    const [cart, setCart] = useState( JSON.parse(localStorage.getItem("cart")) || []);
     const [qty, setQty] = useState([0]);
     const [total, setTotal] = useState([0])
 
@@ -59,6 +59,10 @@ export default function CartContext({ children }) {
       };
     
   
+      useEffect(() => {
+        localStorage.setItem("cart", JSON.stringify(cart))
+      }, [cart]);
+      
 
   return (
     <cartContext.Provider value={{cart, qty, total, addItem, deleteItem, clear, removeItem}}>

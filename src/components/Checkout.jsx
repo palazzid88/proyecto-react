@@ -5,16 +5,18 @@ import { cartContext } from "../Context/CartContextComponent";
 import { addDoc, doc,updateDoc, collection, getFirestore, serverTimestamp } from "firebase/firestore";
 import { increment } from 'firebase/firestore';
 import "./Checkout.css";
+import Swal from 'sweetalert2';
 
 
 export const Checkout = () => {
-    const { cart, total, price} = useContext(cartContext);
+    const { cart, total, price, clear} = useContext(cartContext);
+    let pedidoFinal;
 
     // Formulario
     const [nombre, setNombre] = useState('');
     const [email, setEmail] = useState('');
     const [celular, setCelular] = useState('');
-
+    const [order, setOrder] = useState('');
 
     console.log('cartlog', cart);
     console.log('totallog', total);
@@ -27,6 +29,17 @@ export const Checkout = () => {
         total: total,
         date: serverTimestamp()
       };
+
+      if(nombre === "" || email === "" || celular === "") {
+
+        Swal.fire({
+          icon: "error",
+          title: "Error en formulario",
+          text: "Complete el formulario para continuar con la compra",
+        });
+        return;
+
+      }
       
       console.log("quiere comprar", pedido);
 
@@ -34,13 +47,28 @@ export const Checkout = () => {
 
       const pedidos = collection(db, 'pedidos' );
       addDoc(pedidos, pedido).then((pedidoInsertado) => {
-        console.log(pedidoInsertado.id);
+        setOrder(pedidoInsertado.id);
+        console.log("pedido insertado", pedidoInsertado.id);
+
         
         cart.forEach(item => {
           const documento = doc(db, 'productos', item.id);
           updateDoc(documento, { stock: increment(-item.cantidad) });
         });
         });
+
+        Swal.fire({
+          position: "center",
+          icon: "success",
+          title:
+            "gracias por su compra " + nombre + " su número de ticket es: " + order,
+          showConfirmButton: false,
+          timer: 1500,
+        });
+        setTimeout(() => {
+          clear();
+        }, "1500");
+
       }
 
   return (

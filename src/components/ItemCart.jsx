@@ -13,10 +13,11 @@ import { Checkout } from './Checkout';
 export const ItemCart = ({ product, finalizarCompra }) => {
     console.log( 'ItemCart', product);
     console.log('total0', product.cantidad * product.price);
-    const {deleteItem, cart } = useContext(cartContext)
+    const { deleteItem, cart } = useContext(cartContext);
 
   return (
   <>
+  <div className='cart-div'>
     <div className='div-cart'>    
             <div>
               <img className='img-cart' src={product.img} />
@@ -25,10 +26,10 @@ export const ItemCart = ({ product, finalizarCompra }) => {
               <div>
                 <h3>{product.title}</h3>
               </div>
-              <div>
-                <p>cant: {product.cantidad}</p>
-                <p>precio: ${product.price}</p>
-                <p>total: ${product.price * product.cantidad}</p>
+              <div className='div-item'>
+                <p className='p-item'>cant: {product.cantidad}</p>
+                <p className='p-item'>precio: ${product.price}</p>
+                <p className='p-item-total'>subtotal: ${product.price * product.cantidad}</p>
                 <CloseButton onClick={()=> deleteItem(product.id)} aria-label="Hide" />
               </div>
             </div>
@@ -36,6 +37,8 @@ export const ItemCart = ({ product, finalizarCompra }) => {
         {/* ))} */}
         {/* </Table> */}
     </div>
+  </div>
+
           {/* < Checkout key={product.id} product = { product } /> */}
         </>
         

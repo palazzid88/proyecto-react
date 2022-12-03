@@ -82,7 +82,10 @@ export default function Cart() {
             {cart.map((producto) => (
                 < ItemCart key={producto.id} product = { producto } />
             ))}
-            {/* <Checkout /> */}
+              {/* <div>
+                Total a pagar: ${parseInt(total)}
+              </div> */}
+
             <div className='div-checkout'>
               <Link to={"/checkout"}>
                   <button className="btn-finalizar" /*onClick={finalizarCompra}*/ variant="contained"> Finalizar Compra </button>
