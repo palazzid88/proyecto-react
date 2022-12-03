@@ -1,5 +1,5 @@
 import React, { useContext, useState } from 'react'
-import { json } from 'react-router-dom';
+import { json, Link } from 'react-router-dom';
 import Table from 'react-bootstrap/Table';
 import { cartContext } from "../Context/CartContextComponent";
 import { addDoc, doc,updateDoc, collection, getFirestore, serverTimestamp } from "firebase/firestore";
@@ -57,17 +57,36 @@ export const Checkout = () => {
         });
         });
 
+
         Swal.fire({
-          position: "center",
-          icon: "success",
           title:
-            "gracias por su compra " + nombre + " su número de ticket es: " + order,
-          showConfirmButton: false,
-          timer: 1500,
+          "gracias por su compra " + nombre + " su número de ticket es: " + order,
+          showClass: {
+            popup: 'animate__animated animate__fadeInDown'
+          },
+          hideClass: {
+            popup: 'animate__animated animate__fadeOutUp'
+          }
         });
         setTimeout(() => {
           clear();
         }, "1500");
+
+
+
+
+
+        // Swal.fire({
+        //   position: "center",
+        //   icon: "success",
+        //   title:
+        //     "gracias por su compra " + nombre + " su número de ticket es: " + order,
+        //   showConfirmButton: false,
+        //   timer: 1500,
+        // });
+        // setTimeout(() => {
+        //   clear();
+        // }, "1500");
 
       }
 
