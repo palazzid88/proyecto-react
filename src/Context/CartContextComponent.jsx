@@ -23,7 +23,6 @@ export default function CartContext({ children }) {
           const actualizado = cart.map((producto) =>{
             if (producto.id === item.id) {
               producto.cantidad += cantidad;              
-              // console.log("actual", producto);
             }
             return producto
           });

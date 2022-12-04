@@ -1,4 +1,4 @@
-import React, { useContext, useState } from 'react'
+import React, { useContext, useState, useEffect } from 'react'
 import { json, Link } from 'react-router-dom';
 import Table from 'react-bootstrap/Table';
 import { cartContext } from "../Context/CartContextComponent";
@@ -11,6 +11,8 @@ import Swal from 'sweetalert2';
 export const Checkout = () => {
     const { cart, total, price, clear} = useContext(cartContext);
     let pedidoFinal;
+
+
 
     // Formulario
     const [nombre, setNombre] = useState('');
@@ -58,40 +60,13 @@ export const Checkout = () => {
         });
 
 
-        Swal.fire({
-          title:
-          "gracias por su compra " + nombre + " su número de ticket es: " + order,
-          showClass: {
-            popup: 'animate__animated animate__fadeInDown'
-          },
-          hideClass: {
-            popup: 'animate__animated animate__fadeOutUp'
-          }
-        });
-        setTimeout(() => {
-          clear();
-        }, "1500");
-
-
-
-
-
-        // Swal.fire({
-        //   position: "center",
-        //   icon: "success",
-        //   title:
-        //     "gracias por su compra " + nombre + " su número de ticket es: " + order,
-        //   showConfirmButton: false,
-        //   timer: 1500,
-        // });
-        // setTimeout(() => {
-        //   clear();
-        // }, "1500");
-
-      }
+              
+        
+ }
 
   return (
     <>
+    {order ==="" ? (
   <section className='buy-checkout'>
     <div className='cart-check'>
         <Table striped bordered hover>
@@ -138,10 +113,17 @@ export const Checkout = () => {
           </div>
         </div>
   </section>
-
+    ) : (
       
+<section className='order-checkout'>
+  <h4 className='div-order'>Gracias por su compra!</h4>
+  <p className='div-order'> su numero depedido es: </p>
+  <h4 className='div-order'> {order} </h4>
+</section>
+
+    )}    
     
     </>
 
-  )
-}
+  );
+};

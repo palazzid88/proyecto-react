@@ -26,15 +26,9 @@ export default function ItemListContainer({greeting}) {
       const newArray = res.docs.map((producto) => {
         return { 
           id: producto.id, title: producto.data().title, category: producto.data().category, description: producto.data().description, img: producto.data().img, price: producto.data().price, un: producto.data().un }
-      // })
-      // setProductos(newArray);
     });
-    // if(idcategory) {
-    //   setProductos(newArray.filter((item) => item.category === idcategory));
       console.log(`nuevo`, newArray);
-    // } else {
       setProductos(newArray);
-    // }
   });
 }, [idcategory]);
 

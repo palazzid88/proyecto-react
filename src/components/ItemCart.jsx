@@ -33,13 +33,9 @@ export const ItemCart = ({ product, finalizarCompra }) => {
                 <CloseButton onClick={()=> deleteItem(product.id)} aria-label="Hide" />
               </div>
             </div>
-          {/* </tbody> */}
-        {/* ))} */}
-        {/* </Table> */}
     </div>
   </div>
 
-          {/* < Checkout key={product.id} product = { product } /> */}
         </>
         
       );

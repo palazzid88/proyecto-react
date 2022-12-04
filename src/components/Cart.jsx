@@ -1,7 +1,6 @@
 import React, { useContext, useState } from 'react'
 import { db, getFirestore } from 'firebase/firestore'
 import { collection, addDoc, serverTimestamp, doc,updateDoc, udddateDoc } from 'firebase/firestore'
-// import Swal from 'sweetalert2'
 import { Button } from 'bootstrap';
 import { ItemCart } from './ItemCart';
 import { Link } from 'react-router-dom';
@@ -37,17 +36,6 @@ export default function Cart() {
     .then(result => {
       console.log(result.id);
       setPedido(result.id)
-
-    //   Swal.fire({
-    //     title: 'muchas gracias por su compra!',
-    //     html: 'numero de compra: <b>${result.id}</b>',
-    //     showClass: {
-    //       popup: 'animate__animated animate__fadeInDown'
-    //     },
-    //     hideClass: {
-    //       popup: 'animate__animated animate__fadeOutUp'
-    //     },
-    //   });
     });
 
   actualizarStock();
@@ -82,13 +70,10 @@ export default function Cart() {
             {cart.map((producto) => (
                 < ItemCart key={producto.id} product = { producto } />
             ))}
-              {/* <div>
-                Total a pagar: ${parseInt(total)}
-              </div> */}
 
             <div className='div-checkout'>
               <Link to={"/checkout"}>
-                  <button className="btn-finalizar" /*onClick={finalizarCompra}*/ variant="contained"> Finalizar Compra </button>
+                  <button className="btn-finalizar" variant="contained"> Finalizar Compra </button>
               </Link>
               <button onClick={()=> clear()} aria-label="Hide">Vaciar Carrito</button>
             </div>

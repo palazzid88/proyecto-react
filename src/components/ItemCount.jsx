@@ -1,13 +1,11 @@
 import React, { useContext, useState } from "react";
 import Button from 'react-bootstrap/Button';
-// import Form from 'react-bootstrap/Form';
 import InputGroup from 'react-bootstrap/InputGroup';
 import { Link } from "react-router-dom";
 import { cartContext } from "../Context/CartContextComponent";
 
 export default function ItemCount ({initial, stock, onAdd, prod}) {
     const [count, setCount] = useState(parseInt(initial));
-    // const {cart, addItem} = useContext(cartContext);
 
     const clickRestar = () => {
       if (count >1) {

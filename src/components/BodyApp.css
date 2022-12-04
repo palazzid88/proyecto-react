@@ -1,13 +1,3 @@
-
-/* código caduco */
-/* Este cógido fue creado */
-/* Para renderizar las cards */
-
-/* body { */
-    /* background-image: url('../../public/img/fondo.jpg');
-    background-size:cover; */
-/* } */
-
 .card_flex {
     background-color: white;
     display: inline-flex;

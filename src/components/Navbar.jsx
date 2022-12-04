@@ -11,7 +11,6 @@ import { ComponentTitle } from './ComponentTitle';
 import { Button } from 'react-bootstrap';
 import context from 'react-bootstrap/esm/AccordionContext';
 import { cartContext } from '../Context/CartContextComponent';
-// import { Button } from 'react-bootstrap';
 
 
 const pages = [
@@ -19,8 +18,6 @@ const pages = [
   {label: 'Frutas', id:2, link: '/category/frutas' },
   {label: 'Verduras', id:3, link: '/category/verduras' },
   {label: 'Especias', id:4, link: '/category/especias' },
-  {label: 'checkout', id:5, link: '/Checkout' },
-  // {label: 'cart', id:5, link: '/Cart' }
 
 ]
 
