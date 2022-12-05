@@ -64,6 +64,10 @@ export const Checkout = () => {
         
  }
 
+ function finalizar () {
+  clear();
+ }
+
   return (
     <>
     {order ==="" ? (
@@ -119,9 +123,13 @@ export const Checkout = () => {
   <h4 className='div-order'>Gracias por su compra!</h4>
   <p className='div-order'> su numero depedido es: </p>
   <h4 className='div-order'> {order} </h4>
+  <Link to="../">
+  <button onClick={finalizar}>Finalizar</button>
+  </Link>
 </section>
 
-    )}    
+
+)}    
     
     </>
 
